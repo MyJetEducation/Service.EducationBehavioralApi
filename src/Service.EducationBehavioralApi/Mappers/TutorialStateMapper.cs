@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Service.EducationBehavioralApi.Models;
-using Service.TutorialPersonal.Grpc.Models.State;
+using Service.TutorialBehavioral.Grpc.Models.State;
 using Enum = System.Enum;
 
 namespace Service.EducationBehavioralApi.Mappers
@@ -15,7 +15,7 @@ namespace Service.EducationBehavioralApi.Mappers
 			}
 			: null;
 
-		public static TutorialStateResponse ToModel(this PersonalStateGrpcResponse response) => response != null
+		public static TutorialStateResponse ToModel(this BehavioralStateGrpcResponse response) => response != null
 			? new TutorialStateResponse
 			{
 				Available = response.Available,
@@ -51,7 +51,7 @@ namespace Service.EducationBehavioralApi.Mappers
 			}
 			: null;
 
-		private static TutorialStateUnit ToModel(this PersonalStateUnitGrpcModel grpcModel) => grpcModel != null
+		private static TutorialStateUnit ToModel(this BehavioralStateUnitGrpcModel grpcModel) => grpcModel != null
 			? new TutorialStateUnit
 			{
 				Unit = grpcModel.Unit,
@@ -60,7 +60,7 @@ namespace Service.EducationBehavioralApi.Mappers
 			}
 			: null;
 
-		private static TutorialStateTask ToModel(this PersonalStateTaskGrpcModel grpcModel) => grpcModel != null
+		private static TutorialStateTask ToModel(this BehavioralStateTaskGrpcModel grpcModel) => grpcModel != null
 			? new TutorialStateTask
 			{
 				Task = grpcModel.Task,

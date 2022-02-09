@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Service.Core.Client.Services;
-using Service.TutorialPersonal.Client;
+using Service.TutorialBehavioral.Client;
 using Service.UserInfo.Crud.Client;
 using Service.UserReward.Client;
 
@@ -11,7 +11,7 @@ namespace Service.EducationBehavioralApi.Modules
 		protected override void Load(ContainerBuilder builder)
 		{
 			builder.RegisterUserInfoCrudClient(Program.Settings.UserInfoCrudServiceUrl);
-			builder.RegisterTutorialPersonalClient(Program.Settings.TutorialBehavioralServiceUrl);
+			builder.RegisterTutorialBehavioralClient(Program.Settings.TutorialBehavioralServiceUrl);
 			builder.RegisterUserRewardClient(Program.Settings.UserRewardServiceUrl);
 
 			builder.RegisterType<SystemClock>().AsImplementedInterfaces().SingleInstance();

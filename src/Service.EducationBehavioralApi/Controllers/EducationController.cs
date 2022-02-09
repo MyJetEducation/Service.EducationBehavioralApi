@@ -10,8 +10,8 @@ using Service.Core.Client.Models;
 using Service.Core.Client.Services;
 using Service.EducationBehavioralApi.Mappers;
 using Service.EducationBehavioralApi.Models;
-using Service.TutorialPersonal.Grpc;
-using Service.TutorialPersonal.Grpc.Models;
+using Service.TutorialBehavioral.Grpc.Models;
+using Service.TutorialBehavioral.Grpc;
 using Service.UserInfo.Crud.Grpc;
 using Service.UserReward.Grpc;
 using Service.UserReward.Grpc.Models;
@@ -21,10 +21,10 @@ namespace Service.EducationBehavioralApi.Controllers
 	[Route("/api/v1/education/behavioral")]
 	public class EducationController : BaseController
 	{
-		private readonly ITutorialPersonalService _tutorialService;
+		private readonly ITutorialBehavioralService _tutorialService;
 		private readonly IUserRewardService _userRewardService;
 
-		public EducationController(ITutorialPersonalService tutorialService,
+		public EducationController(ITutorialBehavioralService tutorialService,
 			IUserInfoService userInfoService,
 			IUserRewardService userRewardService,
 			IEncoderDecoder encoderDecoder, ISystemClock systemClock,
@@ -54,7 +54,7 @@ namespace Service.EducationBehavioralApi.Controllers
 		[HttpPost("dashboard")]
 		[SwaggerResponse(HttpStatusCode.OK, typeof (DataResponse<TutorialStateResponse>), Description = "Ok")]
 		public async ValueTask<IActionResult> GetDashboardStateAsync() =>
-			await Process(userId => _tutorialService.GetDashboardStateAsync(new PersonalSelectTaskUnitGrpcRequest {UserId = userId}), grpc => grpc.ToModel());
+			await Process(userId => _tutorialService.GetDashboardStateAsync(new BehavioralSelectTaskUnitGrpcRequest {UserId = userId}), grpc => grpc.ToModel());
 
 		[HttpPost("state")]
 		[SwaggerResponse(HttpStatusCode.OK, typeof (DataResponse<FinishUnitResponse>), Description = "Ok")]
