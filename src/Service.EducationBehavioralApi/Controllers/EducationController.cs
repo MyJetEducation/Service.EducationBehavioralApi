@@ -67,7 +67,7 @@ namespace Service.EducationBehavioralApi.Controllers
 			return await Process(userId => _tutorialService.GetFinishStateAsync(new GetFinishStateGrpcRequest {UserId = userId, Unit = request.Unit}), grpc => grpc.ToModel());
 		}
 
-		#region Unit1 (Your income)
+		#region Unit1 (Casino secrets around you)
 
 		[HttpPost("unit1/text")]
 		[OpenApiTag("Unit1")]
@@ -107,7 +107,7 @@ namespace Service.EducationBehavioralApi.Controllers
 
 		#endregion
 
-		#region Unit2 (Spending money secrets. Instruction. Exercise)
+		#region Unit2 (It doesn’t matter how much money you give a person. Miracle won't happen)
 
 		[HttpPost("unit2/text")]
 		[OpenApiTag("Unit2")]
@@ -147,7 +147,7 @@ namespace Service.EducationBehavioralApi.Controllers
 
 		#endregion
 
-		#region Unit3 (Hidden expenses and lost profits. Instruction. Exercise)
+		#region Unit3 (Shopping list and time. Savings today)
 
 		[HttpPost("unit3/text")]
 		[OpenApiTag("Unit3")]
@@ -187,7 +187,7 @@ namespace Service.EducationBehavioralApi.Controllers
 
 		#endregion
 
-		#region Unit4 (Salary - make sure that it is enough. Instruction. Exercise)
+		#region Unit4 (Financial ecology. Do you consume for pleasure, or because of advertising?)
 
 		[HttpPost("unit4/text")]
 		[OpenApiTag("Unit4")]
@@ -227,7 +227,7 @@ namespace Service.EducationBehavioralApi.Controllers
 
 		#endregion
 
-		#region Unit5 (Budget planning in three steps. Modern tools. Instruction. Exercise)
+		#region Unit5 (Habits. financial habits. Your personal revolution)
 
 		[HttpPost("unit5/text")]
 		[OpenApiTag("Unit5")]
