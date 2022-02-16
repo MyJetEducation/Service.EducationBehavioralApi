@@ -53,7 +53,7 @@ namespace Service.EducationBehavioralApi
 		{
 			JwtSecret = Environment.GetEnvironmentVariable(JwtSecretName);
 
-			void ShowError(string message)
+			static void ShowError(string message)
 			{
 				Console.WriteLine(message);
 				throw new Exception(message);
@@ -92,7 +92,7 @@ namespace Service.EducationBehavioralApi
 				.ConfigureServices(services =>
 				{
 					services.AddSingleton(loggerFactory);
-					services.AddSingleton(typeof (ILogger<>), typeof (Logger<>));
+					services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
 				});
 
 		private static void GetEnvVariables()

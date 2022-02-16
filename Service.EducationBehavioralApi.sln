@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.EducationBehavioralApi", "src\Service.EducationBehavioralApi\Service.EducationBehavioralApi.csproj", "{740DF849-06AA-448E-8B09-91ECA236A051}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A9A2F2A9-1B5B-40D1-8DD2-6C1D776FB6BC} = {A9A2F2A9-1B5B-40D1-8DD2-6C1D776FB6BC}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "test\TestApp\TestApp.csproj", "{58D3C5BA-5D1D-48BA-9D51-482831254985}"
 EndProject

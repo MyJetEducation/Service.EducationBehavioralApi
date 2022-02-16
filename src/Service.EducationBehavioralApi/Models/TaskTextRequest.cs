@@ -1,6 +1,6 @@
 ﻿namespace Service.EducationBehavioralApi.Models
 {
-	public class TaskTextRequest: TaskRequestBase
+	public class TaskTextRequest : TaskRequestBase
 	{
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Service.EducationBehavioralApi.Models;
 using Service.TutorialBehavioral.Grpc.Models.State;
-using Enum = System.Enum;
 
 namespace Service.EducationBehavioralApi.Mappers
 {
@@ -15,56 +14,33 @@ namespace Service.EducationBehavioralApi.Mappers
 			}
 			: null;
 
-		public static TutorialStateResponse ToModel(this BehavioralStateGrpcResponse response) => response != null
-			? new TutorialStateResponse
+		public static FinishStateResponse ToModel(this FinishStateGrpcResponse grpcResponse) => grpcResponse != null
+			? new FinishStateResponse
 			{
-				Available = response.Available,
-				Units = response.Units?.Select(unit => unit.ToModel()),
-				TotalProgress = response.TotalProgress.ToModel()
+				Case = grpcResponse.Case,
+				Game = grpcResponse.Game,
+				Test = grpcResponse.Test,
+				Text = grpcResponse.Text,
+				Video = grpcResponse.Video,
+				TrueFalse = grpcResponse.TrueFalse,
+				Achievements = grpcResponse.Achievements
 			}
 			: null;
 
-		public static FinishUnitResponse ToModel(this FinishUnitGrpcResponse grpcResponse) => grpcResponse != null
-			? new FinishUnitResponse
-			{
-				Unit = grpcResponse.Unit?.ToModel(),
-				TrueFalseProgress = grpcResponse.TrueFalseProgress,
-				CaseProgress = grpcResponse.CaseProgress
-			}
-			: null;
-
-		private static TotalProgressResponse ToModel(this TotalProgressStateGrpcModel grpcModel) => grpcModel != null
-			? new TotalProgressResponse
-			{
-				Habit = grpcModel.Habit.ToModel(),
-				Skill = grpcModel.Skill.ToModel(),
-				Achievements = grpcModel.Achievements?.Select(Enum.GetName).ToArray()
-			}
-			: null;
-
-		private static TotalProgressItemResponse ToModel(this ProgressItemInfoGrpcModel grpcModel) => grpcModel != null
-			? new TotalProgressItemResponse
-			{
-				Index = grpcModel.Index,
-				Count = grpcModel.Count,
-				Progress = grpcModel.Progress
-			}
-			: null;
-
-		private static TutorialStateUnit ToModel(this BehavioralStateUnitGrpcModel grpcModel) => grpcModel != null
+		private static TutorialStateUnit ToModel(this UnitStateGrpcModel grpcModel) => grpcModel != null
 			? new TutorialStateUnit
 			{
 				Unit = grpcModel.Unit,
-				TestScore = grpcModel.TestScore,
+				TaskScore = grpcModel.TestScore,
 				Tasks = grpcModel.Tasks?.Select(task => task.ToModel())
 			}
 			: null;
 
-		private static TutorialStateTask ToModel(this BehavioralStateTaskGrpcModel grpcModel) => grpcModel != null
+		private static TutorialStateTask ToModel(this TaskStateGrpcModel grpcModel) => grpcModel != null
 			? new TutorialStateTask
 			{
 				Task = grpcModel.Task,
-				TestScore = grpcModel.TestScore,
+				TaskScore = grpcModel.TestScore,
 				Retry = grpcModel.RetryInfo.ToModel()
 			}
 			: null;

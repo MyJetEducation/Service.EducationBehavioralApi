@@ -26,7 +26,7 @@ namespace Service.EducationBehavioralApi.Controllers
 		private readonly ISystemClock _systemClock;
 		private readonly IEncoderDecoder _encoderDecoder;
 		private readonly IUserInfoService _userInfoService;
-		private readonly ILogger<EducationController> _logger;
+		private readonly ILogger _logger;
 
 		public BaseController(ISystemClock systemClock,
 			IEncoderDecoder encoderDecoder,
@@ -91,7 +91,7 @@ namespace Service.EducationBehavioralApi.Controllers
 
 			TimeSpan span = _systemClock.Now.Subtract(tokenData.StartDate);
 
-			return span == TimeSpan.Zero ? (TimeSpan?) null : span;
+			return span == TimeSpan.Zero ? (TimeSpan?)null : span;
 		}
 
 		protected async ValueTask<Guid?> GetUserIdAsync()
