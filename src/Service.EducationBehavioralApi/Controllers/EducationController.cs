@@ -11,6 +11,7 @@ using Service.Education.Helpers;
 using Service.Education.Structure;
 using Service.EducationBehavioralApi.Mappers;
 using Service.EducationBehavioralApi.Models;
+using Service.Grpc;
 using Service.TutorialBehavioral.Grpc;
 using Service.TutorialBehavioral.Grpc.Models;
 using Service.UserInfo.Crud.Grpc;
@@ -26,7 +27,7 @@ namespace Service.EducationBehavioralApi.Controllers
 		private readonly IUserRewardService _userRewardService;
 
 		public EducationController(ITutorialBehavioralService tutorialService,
-			IUserInfoService userInfoService,
+			IGrpcServiceProxy<IUserInfoService> userInfoService,
 			IUserRewardService userRewardService,
 			IEncoderDecoder encoderDecoder, ISystemClock systemClock,
 			ILogger<EducationController> logger) : base(systemClock, encoderDecoder, userInfoService, logger)

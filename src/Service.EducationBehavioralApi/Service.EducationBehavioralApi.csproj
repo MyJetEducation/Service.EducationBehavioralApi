@@ -16,9 +16,10 @@
     <PackageReference Include="MyJetEducation.Service.Education" Version="1.0.1" />
     <PackageReference Include="MyJetEducation.Service.TimeLogger.Client" Version="1.0.2" />
     <PackageReference Include="MyJetEducation.Service.TutorialBehavioral.Client" Version="1.0.3" />
-    <PackageReference Include="MyJetEducation.Service.UserInfo.Crud.Client" Version="1.0.14" />
+    <PackageReference Include="MyJetEducation.Service.UserInfo.Crud.Client" Version="1.0.15" />
     <PackageReference Include="MyJetEducation.Service.UserReward.Client" Version="1.0.6" />
     <PackageReference Include="MyJetWallet.Sdk.Service" Version="2.1.7" />
+    <PackageReference Include="MyJetEducation.Service.Grpc" Version="1.0.3" />
   </ItemGroup>
 
   <ItemGroup>
