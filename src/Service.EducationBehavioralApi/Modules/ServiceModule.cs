@@ -1,8 +1,6 @@
 ﻿using Autofac;
-using Microsoft.Extensions.Logging;
 using Service.Core.Client.Services;
 using Service.TutorialBehavioral.Client;
-using Service.UserInfo.Crud.Client;
 using Service.UserReward.Client;
 
 namespace Service.EducationBehavioralApi.Modules
@@ -11,8 +9,6 @@ namespace Service.EducationBehavioralApi.Modules
 	{
 		protected override void Load(ContainerBuilder builder)
 		{
-			builder.RegisterUserInfoCrudClient(Program.Settings.UserInfoCrudServiceUrl, Program.LogFactory.CreateLogger(typeof(UserInfoCrudClientFactory)));
-
 			builder.RegisterTutorialBehavioralClient(Program.Settings.TutorialBehavioralServiceUrl);
 			builder.RegisterUserRewardClient(Program.Settings.UserRewardServiceUrl);
 

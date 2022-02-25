@@ -11,10 +11,8 @@ using Service.Education.Helpers;
 using Service.Education.Structure;
 using Service.EducationBehavioralApi.Mappers;
 using Service.EducationBehavioralApi.Models;
-using Service.Grpc;
 using Service.TutorialBehavioral.Grpc;
 using Service.TutorialBehavioral.Grpc.Models;
-using Service.UserInfo.Crud.Grpc;
 using Service.UserReward.Grpc;
 using Service.UserReward.Grpc.Models;
 
@@ -27,10 +25,9 @@ namespace Service.EducationBehavioralApi.Controllers
 		private readonly IUserRewardService _userRewardService;
 
 		public EducationController(ITutorialBehavioralService tutorialService,
-			IGrpcServiceProxy<IUserInfoService> userInfoService,
 			IUserRewardService userRewardService,
 			IEncoderDecoder encoderDecoder, ISystemClock systemClock,
-			ILogger<EducationController> logger) : base(systemClock, encoderDecoder, userInfoService, logger)
+			ILogger<EducationController> logger) : base(systemClock, encoderDecoder, logger)
 		{
 			_userRewardService = userRewardService;
 			_tutorialService = tutorialService;
@@ -40,7 +37,7 @@ namespace Service.EducationBehavioralApi.Controllers
 		[SwaggerResponse(HttpStatusCode.OK, typeof(DataResponse<StatusResponse>), Description = "Ok")]
 		public async ValueTask<IActionResult> LearningStartedAsync()
 		{
-			Guid? userId = await GetUserIdAsync();
+			Guid? userId = GetUserId();
 			if (userId == null)
 				return StatusResponse.Error(ResponseCode.UserNotFound);
 

@@ -14,9 +14,6 @@ namespace Service.EducationBehavioralApi.Settings
 		[YamlProperty("EducationBehavioralApi.ElkLogs")]
 		public LogElkSettings ElkLogs { get; set; }
 
-		[YamlProperty("EducationBehavioralApi.UserInfoCrudServiceUrl")]
-		public string UserInfoCrudServiceUrl { get; set; }
-
 		[YamlProperty("EducationBehavioralApi.TutorialBehavioralServiceUrl")]
 		public string TutorialBehavioralServiceUrl { get; set; }
 
