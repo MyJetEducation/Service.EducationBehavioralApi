@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NSwag.Annotations;
-using Service.Core.Client.Constants;
 using Service.Core.Client.Models;
 using Service.Core.Client.Services;
 using Service.Education.Helpers;
@@ -15,6 +14,7 @@ using Service.TutorialBehavioral.Grpc;
 using Service.TutorialBehavioral.Grpc.Models;
 using Service.UserReward.Grpc;
 using Service.UserReward.Grpc.Models;
+using Service.Web;
 
 namespace Service.EducationBehavioralApi.Controllers
 {
@@ -47,7 +47,7 @@ namespace Service.EducationBehavioralApi.Controllers
 				Tutorial = EducationTutorial.BehavioralFinance
 			});
 
-			return StatusResponse.Result(response.IsSuccess);
+			return StatusResponse.Result(response);
 		}
 
 		[HttpPost("state")]

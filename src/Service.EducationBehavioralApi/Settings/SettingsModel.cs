@@ -17,9 +17,6 @@ namespace Service.EducationBehavioralApi.Settings
 		[YamlProperty("EducationBehavioralApi.TutorialBehavioralServiceUrl")]
 		public string TutorialBehavioralServiceUrl { get; set; }
 
-		[YamlProperty("EducationBehavioralApi.JwtAudience")]
-		public string JwtAudience { get; set; }
-
 		[YamlProperty("EducationBehavioralApi.UserRewardServiceUrl")]
 		public string UserRewardServiceUrl { get; set; }
 	}
