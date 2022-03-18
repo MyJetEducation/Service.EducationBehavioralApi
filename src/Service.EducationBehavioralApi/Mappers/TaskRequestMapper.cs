@@ -2,38 +2,39 @@
 using System.Linq;
 using Service.EducationBehavioralApi.Models;
 using Service.TutorialBehavioral.Grpc.Models;
+using Service.TutorialBehavioral.Grpc.Models.Task;
 
 namespace Service.EducationBehavioralApi.Mappers
 {
 	public static class TaskRequestMapper
 	{
-		public static BehavioralTaskTextGrpcRequest ToGrpcModel(this TaskTextRequest model, Guid? userId, TimeSpan duration) => new BehavioralTaskTextGrpcRequest
+		public static TaskTextGrpcRequest ToGrpcModel(this TaskTextRequest model, Guid? userId, TimeSpan duration) => new TaskTextGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
 			Duration = duration
 		};
 
-		public static BehavioralTaskTestGrpcRequest ToGrpcModel(this TaskTestRequest model, Guid? userId, TimeSpan duration) => new BehavioralTaskTestGrpcRequest
+		public static TaskTestGrpcRequest ToGrpcModel(this TaskTestRequest model, Guid? userId, TimeSpan duration) => new TaskTestGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
 			Duration = duration,
-			Answers = model.Answers.Select(answer => new BehavioralTaskTestAnswerGrpcModel
+			Answers = model.Answers.Select(answer => new TaskTestAnswerGrpcModel
 			{
 				Number = answer.Number,
 				Value = answer.Value
 			}).ToArray()
 		};
 
-		public static BehavioralTaskVideoGrpcRequest ToGrpcModel(this TaskVideoRequest model, Guid? userId, TimeSpan duration) => new BehavioralTaskVideoGrpcRequest
+		public static TaskVideoGrpcRequest ToGrpcModel(this TaskVideoRequest model, Guid? userId, TimeSpan duration) => new TaskVideoGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
 			Duration = duration
 		};
 
-		public static BehavioralTaskCaseGrpcRequest ToGrpcModel(this TaskCaseRequest model, Guid? userId, TimeSpan duration) => new BehavioralTaskCaseGrpcRequest
+		public static TaskCaseGrpcRequest ToGrpcModel(this TaskCaseRequest model, Guid? userId, TimeSpan duration) => new TaskCaseGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
@@ -41,19 +42,19 @@ namespace Service.EducationBehavioralApi.Mappers
 			Value = model.Value
 		};
 
-		public static BehavioralTaskTrueFalseGrpcRequest ToGrpcModel(this TaskTrueFalseRequest model, Guid? userId, TimeSpan duration) => new BehavioralTaskTrueFalseGrpcRequest
+		public static TaskTrueFalseGrpcRequest ToGrpcModel(this TaskTrueFalseRequest model, Guid? userId, TimeSpan duration) => new TaskTrueFalseGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
 			Duration = duration,
-			Answers = model.Answers.Select(answer => new BehavioralTaskTrueFalseAnswerGrpcModel
+			Answers = model.Answers.Select(answer => new TaskTrueFalseAnswerGrpcModel
 			{
 				Number = answer.Number,
 				Value = answer.Value
 			}).ToArray()
 		};
 
-		public static BehavioralTaskGameGrpcRequest ToGrpcModel(this TaskGameRequest model, Guid? userId, TimeSpan duration) => new BehavioralTaskGameGrpcRequest
+		public static TaskGameGrpcRequest ToGrpcModel(this TaskGameRequest model, Guid? userId, TimeSpan duration) => new TaskGameGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,

@@ -27,7 +27,7 @@ namespace Service.EducationBehavioralApi.Mappers
 			}
 			: null;
 
-		private static TutorialStateUnit ToModel(this UnitStateGrpcModel grpcModel) => grpcModel != null
+		private static TutorialStateUnit ToModel(this StateGrpcModel grpcModel) => grpcModel != null
 			? new TutorialStateUnit
 			{
 				Unit = grpcModel.Unit,
