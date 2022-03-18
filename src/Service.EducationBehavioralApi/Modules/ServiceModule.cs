@@ -9,7 +9,7 @@ namespace Service.EducationBehavioralApi.Modules
 	{
 		protected override void Load(ContainerBuilder builder)
 		{
-			builder.RegisterTutorialBehavioralClient(Program.Settings.TutorialBehavioralServiceUrl);
+			builder.RegisterTutorialBehavioralClient(Program.Settings.EducationFlowServiceUrl);
 			builder.RegisterUserRewardClient(Program.Settings.UserRewardServiceUrl);
 
 			builder.RegisterType<SystemClock>().AsImplementedInterfaces().SingleInstance();
