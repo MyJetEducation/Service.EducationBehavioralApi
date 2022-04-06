@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Service.TutorialBehavioral.Grpc.Models.State;
+using Service.TutorialBehavioral.Grpc.Models.Task;
 using Service.WalletApi.EducationBehavioralApi.Controllers.Contracts;
 
 namespace Service.WalletApi.EducationBehavioralApi.Mappers

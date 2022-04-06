@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Service.TutorialBehavioral.Grpc.Models;
 using Service.TutorialBehavioral.Grpc.Models.Task;
 using Service.WalletApi.EducationBehavioralApi.Controllers.Contracts;
 
@@ -8,14 +7,14 @@ namespace Service.WalletApi.EducationBehavioralApi.Mappers
 {
 	public static class TaskRequestMapper
 	{
-		public static TaskTextGrpcRequest ToGrpcModel(this TaskTextRequest model, Guid? userId, TimeSpan duration) => new TaskTextGrpcRequest
+		public static TaskTextGrpcRequest ToGrpcModel(this TaskTextRequest model, string userId, TimeSpan duration) => new TaskTextGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
 			Duration = duration
 		};
 
-		public static TaskTestGrpcRequest ToGrpcModel(this TaskTestRequest model, Guid? userId, TimeSpan duration) => new TaskTestGrpcRequest
+		public static TaskTestGrpcRequest ToGrpcModel(this TaskTestRequest model, string userId, TimeSpan duration) => new TaskTestGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
@@ -27,14 +26,14 @@ namespace Service.WalletApi.EducationBehavioralApi.Mappers
 			}).ToArray()
 		};
 
-		public static TaskVideoGrpcRequest ToGrpcModel(this TaskVideoRequest model, Guid? userId, TimeSpan duration) => new TaskVideoGrpcRequest
+		public static TaskVideoGrpcRequest ToGrpcModel(this TaskVideoRequest model, string userId, TimeSpan duration) => new TaskVideoGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
 			Duration = duration
 		};
 
-		public static TaskCaseGrpcRequest ToGrpcModel(this TaskCaseRequest model, Guid? userId, TimeSpan duration) => new TaskCaseGrpcRequest
+		public static TaskCaseGrpcRequest ToGrpcModel(this TaskCaseRequest model, string userId, TimeSpan duration) => new TaskCaseGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
@@ -42,7 +41,7 @@ namespace Service.WalletApi.EducationBehavioralApi.Mappers
 			Value = model.Value
 		};
 
-		public static TaskTrueFalseGrpcRequest ToGrpcModel(this TaskTrueFalseRequest model, Guid? userId, TimeSpan duration) => new TaskTrueFalseGrpcRequest
+		public static TaskTrueFalseGrpcRequest ToGrpcModel(this TaskTrueFalseRequest model, string userId, TimeSpan duration) => new TaskTrueFalseGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
@@ -54,7 +53,7 @@ namespace Service.WalletApi.EducationBehavioralApi.Mappers
 			}).ToArray()
 		};
 
-		public static TaskGameGrpcRequest ToGrpcModel(this TaskGameRequest model, Guid? userId, TimeSpan duration) => new TaskGameGrpcRequest
+		public static TaskGameGrpcRequest ToGrpcModel(this TaskGameRequest model, string userId, TimeSpan duration) => new TaskGameGrpcRequest
 		{
 			UserId = userId,
 			IsRetry = model.IsRetry,
